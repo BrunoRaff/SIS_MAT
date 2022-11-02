@@ -70,11 +70,12 @@ namespace SisMat_GUI
             drCarrera["Id_carrera"] = 0;
             drCarrera["Nom_carrera"] = "Seleccione una carrera";
             dtCarreras.Rows.InsertAt(drCarrera, 0);
+            /*
             cmbCarrera.DataSource = dtCarreras;
             cmbCarrera.DisplayMember = "Nom_carrera";
-            cmbCarrera.ValueMember = "Id_carrera";
+            cmbCarrera.ValueMember = "Id_carrera";*/
 
-         
+            /*
             DataTable dtSemestre = semestreBL.ListarSemestre();
             DataRow drSemestre;
             drSemestre = dtSemestre.NewRow();
@@ -84,7 +85,7 @@ namespace SisMat_GUI
             cmbSemestre.DataSource = dtSemestre;
             cmbSemestre.DisplayMember = "Des_semestre";
             cmbSemestre.ValueMember = "Id_semestre";
-
+            */
             
 
             AlumnoBE objAlumno = alumnoBL.ConsultarAlumno(IdAlumno);
@@ -102,21 +103,22 @@ namespace SisMat_GUI
             }
             txtApellido.Text = objAlumno.Ape_alum;
             txtDireccion.Text = objAlumno.Dir_alum;
-            txtDNI.Text = objAlumno.Dni_alum;
-            txtTelefono.Text = objAlumno.Tel_alum;
+            mskDNI.Text = objAlumno.Dni_alum;
+            mskTelefono.Text = objAlumno.Tel_alum;
             txtEmail.Text = objAlumno.Email_alum;
-            mskFechaNa.Text = Convert.ToDateTime(objAlumno.Fec_nac).ToString();
+            dtpNacimiento.Text = Convert.ToDateTime(objAlumno.Fec_nac).ToString();
 
             String Id_Ubigeo = objAlumno.Id_Ubigeo;
             cmbDepartamento.SelectedValue = Id_Ubigeo.Substring(0, 2);
             cmbProvincia.SelectedValue = Id_Ubigeo.Substring(2, 2);
             cmbDist.SelectedValue = Id_Ubigeo.Substring(4, 2);
 
+            /*
             Int16 idCarrera = alumnoBL.ConsultarAlumnoCarrera(this.IdAlumno);
             Int16 idSemestre = alumnoBL.ConsultarAlumnoSemestre(this.IdAlumno);
-
+            
             cmbCarrera.SelectedValue = idCarrera;
-            cmbSemestre.SelectedValue = idSemestre;
+            cmbSemestre.SelectedValue = idSemestre;*/
 
 
             if (objAlumno.Est_alum == 1)
@@ -193,6 +195,7 @@ namespace SisMat_GUI
                 String selectedState;
                 String selectedSexo;
 
+
                 if (cmbEstado.SelectedItem == null)
                 {
                     selectedState = cmbEstado.Text;
@@ -207,7 +210,7 @@ namespace SisMat_GUI
                 {
                     selectedSexo = cmbSexo.SelectedItem.ToString();
                 }
-                if (txtNombre.Text.Trim() == "" | txtApellido.Text.Trim() == "" | txtDNI.Text.Trim() == "" | txtTelefono.Text.Trim() == "" | txtEmail.Text.Trim() == "" | mskFechaNa.Text.Trim() == "" | txtDireccion.Text.Trim() == "")
+                if (txtNombre.Text.Trim() == "" | txtApellido.Text.Trim() == "" | mskDNI.Text.Trim() == "" | mskTelefono.Text.Trim() == "" | txtEmail.Text.Trim() == "" | dtpNacimiento.Text.Trim() == "" | txtDireccion.Text.Trim() == "")
                 {
                     throw new Exception("Todos los campos son obligatorios");
                 }
@@ -215,10 +218,11 @@ namespace SisMat_GUI
                 {
                     throw new Exception("Debe seleccionar el ubigeo");
                 }
+                /*
                 if (cmbCarrera.SelectedIndex == 0 | cmbSemestre.SelectedIndex == 0)
                 {
                     throw new Exception("Debe seleccionar una carrera y semestre");
-                }
+                }*/
                 if (pctFoto.Image == null)
                 {
                     throw new Exception("Si el alumno no tenia foto previamente, ahora si debe de tener, Porfavor ingrese una foto");
@@ -228,10 +232,10 @@ namespace SisMat_GUI
                 objAlumnoBE.Id_alum = IdAlumno;
                 objAlumnoBE.Nom_alum = txtNombre.Text;
                 objAlumnoBE.Ape_alum = txtApellido.Text;
-                objAlumnoBE.Dni_alum = txtDNI.Text;
+                objAlumnoBE.Dni_alum = mskDNI.Text;
                 objAlumnoBE.Email_alum = txtEmail.Text;
                 objAlumnoBE.Dir_alum = txtDireccion.Text;
-                objAlumnoBE.Tel_alum = txtTelefono.Text;
+                objAlumnoBE.Tel_alum = mskTelefono.Text;
                 if (selectedState == "Inactivo")
                 {
                     objAlumnoBE.Est_alum = 0;
@@ -249,7 +253,7 @@ namespace SisMat_GUI
                     objAlumnoBE.Sexo = "F";
                 }
 
-                objAlumnoBE.Id_Ubigeo = actualIdUbigeo;
+                objAlumnoBE.Id_Ubigeo = cmbDepartamento.SelectedValue.ToString() + cmbProvincia.SelectedValue.ToString() + cmbDist.SelectedValue.ToString();
 
                 if (openFileDialog.FileName.Length > 0)
                 {
@@ -261,11 +265,11 @@ namespace SisMat_GUI
                 objAlumnoBE.Usu_Registro = UsuarioCredenciales.Usuario;
                 objAlumnoBE.Usu_Ult_Mod = UsuarioCredenciales.Usuario;
                 objAlumnoBE.Fec_Ult_Mod = DateTime.Today;
-                objAlumnoBE.Fec_nac = Convert.ToDateTime(mskFechaNa.Text);
+                objAlumnoBE.Fec_nac = Convert.ToDateTime(dtpNacimiento.Text);
+                /*
                 objMatriculaBE.Id_semestre = Convert.ToInt16(cmbSemestre.SelectedValue);
-                objMatriculaBE.Id_carrera = Convert.ToInt16(cmbCarrera.SelectedValue);
+                objMatriculaBE.Id_carrera = Convert.ToInt16(cmbCarrera.SelectedValue);*/
 
-                
                 if (alumnoBL.ActualizarAlumno(objAlumnoBE))
                 {
                     MessageBox.Show("Alumno " + objAlumnoBE.Nom_alum + " " + objAlumnoBE.Ape_alum + " actualizado correctamente", "Success", MessageBoxButtons.OK);
@@ -297,11 +301,6 @@ namespace SisMat_GUI
             {
                 MessageBox.Show(ex.Message);
             }
-        }
-
-        private void cmbCarrera_SelectionChangeCommitted(object sender, EventArgs e)
-        {
-
         }
     }
 }

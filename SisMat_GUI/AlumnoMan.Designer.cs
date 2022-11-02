@@ -29,23 +29,21 @@
         private void InitializeComponent()
         {
             this.dtgAlumno = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.txtFiltro = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnEliminarAlumno = new System.Windows.Forms.Button();
             this.Id_alum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Foto_alum = new System.Windows.Forms.DataGridViewImageColumn();
             this.Nom_alum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Ape_alum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Dir_alum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Email_alum = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nom_carrera = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Des_semestre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Distrito = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Provincia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Departamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.txtFiltro = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnEliminarAlumno = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgAlumno)).BeginInit();
             this.SuspendLayout();
             // 
@@ -65,8 +63,6 @@
             this.Ape_alum,
             this.Dir_alum,
             this.Email_alum,
-            this.Nom_carrera,
-            this.Des_semestre,
             this.Estado,
             this.Distrito,
             this.Provincia,
@@ -79,95 +75,6 @@
             this.dtgAlumno.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgAlumno.Size = new System.Drawing.Size(1143, 374);
             this.dtgAlumno.TabIndex = 0;
-            // 
-            // Id_alum
-            // 
-            this.Id_alum.DataPropertyName = "Id_alum";
-            this.Id_alum.HeaderText = "ID";
-            this.Id_alum.Name = "Id_alum";
-            this.Id_alum.ReadOnly = true;
-            this.Id_alum.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Id_alum.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // Foto_alum
-            // 
-            this.Foto_alum.DataPropertyName = "Foto_alum";
-            this.Foto_alum.HeaderText = "Foto";
-            this.Foto_alum.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.Foto_alum.Name = "Foto_alum";
-            this.Foto_alum.ReadOnly = true;
-            this.Foto_alum.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Foto_alum.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // Nom_alum
-            // 
-            this.Nom_alum.DataPropertyName = "Nom_alum";
-            this.Nom_alum.HeaderText = "Nombre";
-            this.Nom_alum.Name = "Nom_alum";
-            this.Nom_alum.ReadOnly = true;
-            // 
-            // Ape_alum
-            // 
-            this.Ape_alum.DataPropertyName = "Ape_alum";
-            this.Ape_alum.HeaderText = "Apellido";
-            this.Ape_alum.Name = "Ape_alum";
-            this.Ape_alum.ReadOnly = true;
-            // 
-            // Dir_alum
-            // 
-            this.Dir_alum.DataPropertyName = "Tel_alum";
-            this.Dir_alum.HeaderText = "Direccion";
-            this.Dir_alum.Name = "Dir_alum";
-            this.Dir_alum.ReadOnly = true;
-            // 
-            // Email_alum
-            // 
-            this.Email_alum.DataPropertyName = "Email_alum";
-            this.Email_alum.HeaderText = "Email";
-            this.Email_alum.Name = "Email_alum";
-            this.Email_alum.ReadOnly = true;
-            // 
-            // Nom_carrera
-            // 
-            this.Nom_carrera.DataPropertyName = "Nom_carrera";
-            this.Nom_carrera.HeaderText = "Carrera";
-            this.Nom_carrera.Name = "Nom_carrera";
-            this.Nom_carrera.ReadOnly = true;
-            // 
-            // Des_semestre
-            // 
-            this.Des_semestre.DataPropertyName = "Des_semestre";
-            this.Des_semestre.HeaderText = "Semestre";
-            this.Des_semestre.Name = "Des_semestre";
-            this.Des_semestre.ReadOnly = true;
-            // 
-            // Estado
-            // 
-            this.Estado.DataPropertyName = "Estado";
-            this.Estado.HeaderText = "Estado";
-            this.Estado.Name = "Estado";
-            this.Estado.ReadOnly = true;
-            // 
-            // Distrito
-            // 
-            this.Distrito.DataPropertyName = "Distrito";
-            this.Distrito.HeaderText = "Distrito";
-            this.Distrito.Name = "Distrito";
-            this.Distrito.ReadOnly = true;
-            // 
-            // Provincia
-            // 
-            this.Provincia.DataPropertyName = "Provincia";
-            this.Provincia.HeaderText = "Provincia";
-            this.Provincia.Name = "Provincia";
-            this.Provincia.ReadOnly = true;
-            // 
-            // Departamento
-            // 
-            this.Departamento.DataPropertyName = "Departamento";
-            this.Departamento.HeaderText = "Departamento";
-            this.Departamento.Name = "Departamento";
-            this.Departamento.ReadOnly = true;
             // 
             // button1
             // 
@@ -216,6 +123,81 @@
             this.btnEliminarAlumno.UseVisualStyleBackColor = true;
             this.btnEliminarAlumno.Click += new System.EventHandler(this.btnEliminarAlumno_Click);
             // 
+            // Id_alum
+            // 
+            this.Id_alum.DataPropertyName = "Id_alum";
+            this.Id_alum.HeaderText = "ID";
+            this.Id_alum.Name = "Id_alum";
+            this.Id_alum.ReadOnly = true;
+            this.Id_alum.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Id_alum.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Foto_alum
+            // 
+            this.Foto_alum.DataPropertyName = "Foto_alum";
+            this.Foto_alum.HeaderText = "Foto";
+            this.Foto_alum.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.Foto_alum.Name = "Foto_alum";
+            this.Foto_alum.ReadOnly = true;
+            this.Foto_alum.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Foto_alum.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // Nom_alum
+            // 
+            this.Nom_alum.DataPropertyName = "Nom_alum";
+            this.Nom_alum.HeaderText = "Nombre";
+            this.Nom_alum.Name = "Nom_alum";
+            this.Nom_alum.ReadOnly = true;
+            // 
+            // Ape_alum
+            // 
+            this.Ape_alum.DataPropertyName = "Ape_alum";
+            this.Ape_alum.HeaderText = "Apellido";
+            this.Ape_alum.Name = "Ape_alum";
+            this.Ape_alum.ReadOnly = true;
+            // 
+            // Dir_alum
+            // 
+            this.Dir_alum.DataPropertyName = "Tel_alum";
+            this.Dir_alum.HeaderText = "Direccion";
+            this.Dir_alum.Name = "Dir_alum";
+            this.Dir_alum.ReadOnly = true;
+            // 
+            // Email_alum
+            // 
+            this.Email_alum.DataPropertyName = "Email_alum";
+            this.Email_alum.HeaderText = "Email";
+            this.Email_alum.Name = "Email_alum";
+            this.Email_alum.ReadOnly = true;
+            // 
+            // Estado
+            // 
+            this.Estado.DataPropertyName = "Estado";
+            this.Estado.HeaderText = "Estado";
+            this.Estado.Name = "Estado";
+            this.Estado.ReadOnly = true;
+            // 
+            // Distrito
+            // 
+            this.Distrito.DataPropertyName = "Distrito";
+            this.Distrito.HeaderText = "Distrito";
+            this.Distrito.Name = "Distrito";
+            this.Distrito.ReadOnly = true;
+            // 
+            // Provincia
+            // 
+            this.Provincia.DataPropertyName = "Provincia";
+            this.Provincia.HeaderText = "Provincia";
+            this.Provincia.Name = "Provincia";
+            this.Provincia.ReadOnly = true;
+            // 
+            // Departamento
+            // 
+            this.Departamento.DataPropertyName = "Departamento";
+            this.Departamento.HeaderText = "Departamento";
+            this.Departamento.Name = "Departamento";
+            this.Departamento.ReadOnly = true;
+            // 
             // AlumnoMan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -252,8 +234,6 @@
         private DataGridViewTextBoxColumn Ape_alum;
         private DataGridViewTextBoxColumn Dir_alum;
         private DataGridViewTextBoxColumn Email_alum;
-        private DataGridViewTextBoxColumn Nom_carrera;
-        private DataGridViewTextBoxColumn Des_semestre;
         private DataGridViewTextBoxColumn Estado;
         private DataGridViewTextBoxColumn Distrito;
         private DataGridViewTextBoxColumn Provincia;

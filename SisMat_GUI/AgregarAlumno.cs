@@ -13,7 +13,7 @@ using System.Windows.Forms;
 
 namespace SisMat_GUI
 {
-    public partial class MatricularAlumno : Form
+    public partial class AgregarAlumno : Form
     {
         UbigeoBL ubigeoBL = new UbigeoBL();
         AlumnoBE objAlumnoBE = new AlumnoBE();
@@ -26,7 +26,7 @@ namespace SisMat_GUI
         String actualIdUbigeo = "";
 
         OpenFileDialog openFileDialog = new OpenFileDialog();
-        public MatricularAlumno()
+        public AgregarAlumno()
         {
             InitializeComponent();
         }
@@ -45,6 +45,7 @@ namespace SisMat_GUI
             cmbDepartamento.DisplayMember = "DEPARTAMENTO";
             cmbDepartamento.ValueMember = "IDDEPA";
 
+            /*
             DataTable dtCarreras = carreraBL.ListarCarrera();
             DataRow drCarrera;
             drCarrera = dtCarreras.NewRow();
@@ -53,8 +54,9 @@ namespace SisMat_GUI
             dtCarreras.Rows.InsertAt(drCarrera, 0);
             cmbCarrera.DataSource = dtCarreras;
             cmbCarrera.DisplayMember = "Nom_carrera";
-            cmbCarrera.ValueMember = "Id_carrera";
+            cmbCarrera.ValueMember = "Id_carrera";*/
 
+            /*
             DataTable dtSemestre = semestreBL.ListarSemestre();
             DataRow drSemestre;
             drSemestre = dtSemestre.NewRow();
@@ -63,7 +65,7 @@ namespace SisMat_GUI
             dtSemestre.Rows.InsertAt(drSemestre, 0);
             cmbSemestre.DataSource = dtSemestre;
             cmbSemestre.DisplayMember = "Des_semestre";
-            cmbSemestre.ValueMember = "Id_semestre";
+            cmbSemestre.ValueMember = "Id_semestre";*/
 
         }
 
@@ -117,7 +119,7 @@ namespace SisMat_GUI
             try
             {
                 String selectedSexo = cmbSexo.SelectedItem.ToString();
-                if (txtNombre.Text.Trim() == "" | txtApellido.Text.Trim() == "" | txtDNI.Text.Trim() == "" | txtTelefono.Text.Trim() == "" | txtEmail.Text.Trim() == "" | mskFechaNac.Text.Trim() == "" | selectedSexo != "Masculino" && selectedSexo != "Femenino" | txtDireccion.Text.Trim() == "")
+                if (txtNombre.Text.Trim() == "" | txtApellido.Text.Trim() == "" | mskDNI.Text.Trim() == "" | mskTelefono.Text.Trim() == "" | txtEmail.Text.Trim() == "" | dtpFechaNacimiento.Text.Trim() == "" | selectedSexo != "Masculino" && selectedSexo != "Femenino" | txtDireccion.Text.Trim() == "")
                 {
                     throw new Exception("Todos los campos son obligatorios");
                 }
@@ -125,7 +127,7 @@ namespace SisMat_GUI
                 {
                     throw new Exception("Debe seleccionar el ubigeo");
                 }
-                if (txtTelefono.Text.Length != 9)
+                if (mskTelefono.Text.Length != 9)
                 {
                     throw new Exception("Debe ingresar un numero telefónico de 9 dígitos");
                 }
@@ -133,17 +135,18 @@ namespace SisMat_GUI
                 {
                     throw new Exception("Una foto es necesaria");
                 }
+                /*
                 if (cmbCarrera.SelectedIndex == 0 | cmbSemestre.SelectedIndex == 0)
                 {
                     throw new Exception("Una carrera y un semestre son necesarios");
-                }
+                }*/
 
                 objAlumnoBE.Nom_alum = txtNombre.Text;
                 objAlumnoBE.Ape_alum = txtApellido.Text;
-                objAlumnoBE.Dni_alum = txtDNI.Text;
+                objAlumnoBE.Dni_alum = mskDNI.Text;
                 objAlumnoBE.Email_alum = txtEmail.Text;
                 objAlumnoBE.Dir_alum = txtDireccion.Text;
-                objAlumnoBE.Tel_alum = txtTelefono.Text;
+                objAlumnoBE.Tel_alum = mskTelefono.Text;
                 objAlumnoBE.Est_alum = 1;
                 if (selectedSexo == "Masculino")
                 {
@@ -159,15 +162,16 @@ namespace SisMat_GUI
                     objAlumnoBE.Foto_alum = File.ReadAllBytes(openFileDialog.FileName);
                 }
                 objAlumnoBE.Usu_Ult_Mod = UsuarioCredenciales.Usuario;
+                objAlumnoBE.Usu_Registro = UsuarioCredenciales.Usuario;
                 objAlumnoBE.Fec_Registro = DateTime.Today;
                 objAlumnoBE.Fec_Ult_Mod = DateTime.Today;
-                objAlumnoBE.Fec_nac = Convert.ToDateTime(mskFechaNac.Text);
-                objMatriculaBE.Id_semestre = Convert.ToInt16(cmbSemestre.SelectedValue);
-                objMatriculaBE.Id_carrera = Convert.ToInt16(cmbCarrera.SelectedValue); 
+                objAlumnoBE.Fec_nac = Convert.ToDateTime(dtpFechaNacimiento.Text);
+                /*objMatriculaBE.Id_semestre = Convert.ToInt16(cmbSemestre.SelectedValue);
+                objMatriculaBE.Id_carrera = Convert.ToInt16(cmbCarrera.SelectedValue); */
                 
-                if (alumnoBL.InsertarAlumno(objAlumnoBE, objMatriculaBE))
+                if (alumnoBL.InsertarAlumno(objAlumnoBE))
                 {
-                    MessageBox.Show("Alumno " + objAlumnoBE.Nom_alum + " " + objAlumnoBE.Ape_alum + " matriculado correctamente", "Success", MessageBoxButtons.OK);
+                    MessageBox.Show("Alumno " + objAlumnoBE.Nom_alum + " " + objAlumnoBE.Ape_alum + " agregado correctamente", "Success", MessageBoxButtons.OK);
                     this.Close();
 
                 }

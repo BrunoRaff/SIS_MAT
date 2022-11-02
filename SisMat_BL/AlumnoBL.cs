@@ -13,9 +13,9 @@ namespace SisMat_BL
     public class AlumnoBL
     {
         AlumnoADO objAlumnoADO = new AlumnoADO();
-        public Boolean InsertarAlumno(AlumnoBE objAlumnoBE, MatriculaBE objMatriculaBE)
+        public Boolean InsertarAlumno(AlumnoBE objAlumnoBE)
         {
-            return objAlumnoADO.InsertarAlumno(objAlumnoBE, objMatriculaBE);
+            return objAlumnoADO.InsertarAlumno(objAlumnoBE);
         }
         public Boolean ActualizarAlumno(AlumnoBE objAlumnoBE)
         {

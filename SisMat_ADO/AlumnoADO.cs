@@ -16,7 +16,7 @@ namespace SisMat_ADO
         SqlCommand command = new SqlCommand();
         SqlDataReader dr;
 
-        public Boolean InsertarAlumno(AlumnoBE objAlumnoBE, MatriculaBE objMatriculaBE)
+        public Boolean InsertarAlumno(AlumnoBE objAlumnoBE)
         {
             try
             {
@@ -45,8 +45,9 @@ namespace SisMat_ADO
                 command.Parameters.AddWithValue("@Fec_Ult_Mod", objAlumnoBE.Fec_Ult_Mod);
                 command.Parameters.AddWithValue("@Est_alum", objAlumnoBE.Est_alum);
                 /*MATRICULA PARAMETERS*/
+                /*
                 command.Parameters.AddWithValue("@Id_semestre", objMatriculaBE.Id_semestre);
-                command.Parameters.AddWithValue("@Id_carrera", objMatriculaBE.Id_carrera);
+                command.Parameters.AddWithValue("@Id_carrera", objMatriculaBE.Id_carrera);*/
                 sqlConnection.Open();
                 command.ExecuteNonQuery();
                 return true;

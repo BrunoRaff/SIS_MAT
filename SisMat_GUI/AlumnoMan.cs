@@ -38,7 +38,7 @@ namespace SisMat_GUI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MatricularAlumno matricularModal = new MatricularAlumno();
+            AgregarAlumno matricularModal = new AgregarAlumno();
             matricularModal.ShowDialog();
             obtenerAlumnos("");
         }
