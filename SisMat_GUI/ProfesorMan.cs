@@ -97,7 +97,9 @@ namespace SisMat_GUI
             }
         }
 
-        private void btnEliminar_Click(object sender, EventArgs e)
+        //Eliminar
+
+        /*private void btnEliminar_Click(object sender, EventArgs e)
         {
             try
             {
@@ -121,7 +123,7 @@ namespace SisMat_GUI
             catch (Exception ex) {
                 MessageBox.Show("Error : " + ex.Message);
             }
-        }
+        }*/
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {

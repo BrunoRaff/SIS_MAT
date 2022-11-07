@@ -114,7 +114,7 @@ namespace SisMat_GUI
                 }
 
 
-                if (txtTelefono.Text.Length != 9)
+                if (mskTelefono.MaskFull != true)
                 {
                     throw new Exception("Debe ingresar un numero telefónico de 9 dígitos");
                 }
@@ -133,7 +133,7 @@ namespace SisMat_GUI
                 objProfesorBE.Nom_profe = txtNombre.Text.Trim();
                 objProfesorBE.Ape_profe = txtApellido.Text.Trim();
                 objProfesorBE.Dni_profe = mskDNI.Text;
-                objProfesorBE.Tel_profe = txtTelefono.Text.Trim();
+                objProfesorBE.Tel_profe = mskTelefono.Text.Trim();
                 objProfesorBE.Email_profe = txtEmail.Text.Trim();
                 objProfesorBE.Id_esp = Convert.ToInt16(cmbEspecialidad.SelectedValue);
                 if (selectedSexo == "Masculino")
@@ -231,10 +231,5 @@ namespace SisMat_GUI
             this.Close();
         }
 
-        private void txtTelefono_KeyPress(object sender, KeyPressEventArgs e)
-        {
-                e.Handled = !(char.IsDigit(e.KeyChar)
-                        || e.KeyChar == (char)Keys.Back);
-        }
     }
 }

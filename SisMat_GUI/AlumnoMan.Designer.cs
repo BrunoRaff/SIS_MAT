@@ -42,8 +42,6 @@
             this.Email_alum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Distrito = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Provincia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Departamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dtgAlumno)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,9 +62,7 @@
             this.Dir_alum,
             this.Email_alum,
             this.Estado,
-            this.Distrito,
-            this.Provincia,
-            this.Departamento});
+            this.Distrito});
             this.dtgAlumno.Location = new System.Drawing.Point(12, 58);
             this.dtgAlumno.Name = "dtgAlumno";
             this.dtgAlumno.ReadOnly = true;
@@ -184,20 +180,6 @@
             this.Distrito.Name = "Distrito";
             this.Distrito.ReadOnly = true;
             // 
-            // Provincia
-            // 
-            this.Provincia.DataPropertyName = "Provincia";
-            this.Provincia.HeaderText = "Provincia";
-            this.Provincia.Name = "Provincia";
-            this.Provincia.ReadOnly = true;
-            // 
-            // Departamento
-            // 
-            this.Departamento.DataPropertyName = "Departamento";
-            this.Departamento.HeaderText = "Departamento";
-            this.Departamento.Name = "Departamento";
-            this.Departamento.ReadOnly = true;
-            // 
             // AlumnoMan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -212,7 +194,7 @@
             this.MinimizeBox = false;
             this.Name = "AlumnoMan";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "AlumnoMan";
+            this.Text = "Mantenimiento de alumnos";
             this.Load += new System.EventHandler(this.AlumnoMan_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgAlumno)).EndInit();
             this.ResumeLayout(false);
@@ -236,7 +218,5 @@
         private DataGridViewTextBoxColumn Email_alum;
         private DataGridViewTextBoxColumn Estado;
         private DataGridViewTextBoxColumn Distrito;
-        private DataGridViewTextBoxColumn Provincia;
-        private DataGridViewTextBoxColumn Departamento;
     }
 }

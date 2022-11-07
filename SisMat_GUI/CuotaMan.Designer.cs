@@ -214,7 +214,7 @@
             this.MinimizeBox = false;
             this.Name = "CuotaMan";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "CuotaMan";
+            this.Text = "Mantenimiento de cuotas";
             this.Load += new System.EventHandler(this.CuotaMan_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgCuotas)).EndInit();
             this.ResumeLayout(false);
