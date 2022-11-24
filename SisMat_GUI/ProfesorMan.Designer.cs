@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dtgProfe = new System.Windows.Forms.DataGridView();
             this.Id_profe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Foto_profe = new System.Windows.Forms.DataGridViewImageColumn();
@@ -74,14 +74,14 @@
             this.dtgProfe.RowHeadersVisible = false;
             this.dtgProfe.RowTemplate.Height = 25;
             this.dtgProfe.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgProfe.Size = new System.Drawing.Size(1042, 351);
-            this.dtgProfe.TabIndex = 0;
+            this.dtgProfe.Size = new System.Drawing.Size(1152, 364);
+            this.dtgProfe.TabIndex = 1;
             // 
             // Id_profe
             // 
             this.Id_profe.DataPropertyName = "Id_profe";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.Id_profe.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.Id_profe.DefaultCellStyle = dataGridViewCellStyle4;
             this.Id_profe.FillWeight = 100.0962F;
             this.Id_profe.HeaderText = "ID";
             this.Id_profe.Name = "Id_profe";
@@ -117,8 +117,8 @@
             // 
             this.Tel_profe.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Tel_profe.DataPropertyName = "Tel_profe";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.Tel_profe.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.Tel_profe.DefaultCellStyle = dataGridViewCellStyle5;
             this.Tel_profe.FillWeight = 100.1294F;
             this.Tel_profe.HeaderText = "Teléfono";
             this.Tel_profe.Name = "Tel_profe";
@@ -137,8 +137,8 @@
             // 
             this.Estado.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Estado.DataPropertyName = "Estado";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.Estado.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.Estado.DefaultCellStyle = dataGridViewCellStyle6;
             this.Estado.FillWeight = 100.1474F;
             this.Estado.HeaderText = "Estado";
             this.Estado.Name = "Estado";
@@ -153,30 +153,30 @@
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(788, 486);
+            this.btnAgregar.Location = new System.Drawing.Point(896, 490);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(75, 23);
-            this.btnAgregar.TabIndex = 1;
+            this.btnAgregar.TabIndex = 2;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // btnEditar
             // 
-            this.btnEditar.Location = new System.Drawing.Point(893, 486);
+            this.btnEditar.Location = new System.Drawing.Point(1001, 490);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(75, 23);
-            this.btnEditar.TabIndex = 2;
+            this.btnEditar.TabIndex = 3;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnCerrar
             // 
-            this.btnCerrar.Location = new System.Drawing.Point(990, 486);
+            this.btnCerrar.Location = new System.Drawing.Point(1098, 490);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(75, 23);
-            this.btnCerrar.TabIndex = 3;
+            this.btnCerrar.TabIndex = 4;
             this.btnCerrar.Text = "Cerrar";
             this.btnCerrar.UseVisualStyleBackColor = true;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
@@ -184,7 +184,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(883, 437);
+            this.label1.Location = new System.Drawing.Point(1010, 443);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(58, 15);
             this.label1.TabIndex = 5;
@@ -193,7 +193,7 @@
             // lblRegistros
             // 
             this.lblRegistros.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblRegistros.Location = new System.Drawing.Point(965, 436);
+            this.lblRegistros.Location = new System.Drawing.Point(1092, 442);
             this.lblRegistros.Name = "lblRegistros";
             this.lblRegistros.Size = new System.Drawing.Size(79, 23);
             this.lblRegistros.TabIndex = 6;
@@ -219,7 +219,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1075, 530);
+            this.ClientSize = new System.Drawing.Size(1185, 543);
             this.Controls.Add(this.txtFiltro);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lblRegistros);

@@ -45,6 +45,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lblCount = new System.Windows.Forms.Label();
+            this.btnCerrar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgCuotas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,9 +55,6 @@
             this.dtgCuotas.AllowUserToDeleteRows = false;
             this.dtgCuotas.AllowUserToOrderColumns = true;
             this.dtgCuotas.AllowUserToResizeRows = false;
-            this.dtgCuotas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.dtgCuotas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgCuotas.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dtgCuotas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -77,7 +75,7 @@
             this.dtgCuotas.RowTemplate.Height = 25;
             this.dtgCuotas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgCuotas.Size = new System.Drawing.Size(851, 366);
-            this.dtgCuotas.TabIndex = 0;
+            this.dtgCuotas.TabIndex = 1;
             this.dtgCuotas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // Id_cuota
@@ -144,20 +142,20 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(690, 449);
+            this.button1.Location = new System.Drawing.Point(643, 489);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 1;
+            this.button1.TabIndex = 2;
             this.button1.Text = "Agregar";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(805, 449);
+            this.button2.Location = new System.Drawing.Point(724, 489);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 2;
+            this.button2.TabIndex = 3;
             this.button2.Text = "Editar";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -167,7 +165,7 @@
             this.txtFiltro.Location = new System.Drawing.Point(126, 27);
             this.txtFiltro.Name = "txtFiltro";
             this.txtFiltro.Size = new System.Drawing.Size(254, 23);
-            this.txtFiltro.TabIndex = 3;
+            this.txtFiltro.TabIndex = 0;
             this.txtFiltro.TextChanged += new System.EventHandler(this.txtFiltro_TextChanged);
             // 
             // label1
@@ -176,14 +174,14 @@
             this.label1.Location = new System.Drawing.Point(29, 30);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(91, 15);
-            this.label1.TabIndex = 4;
+            this.label1.TabIndex = 0;
             this.label1.Text = "Filtrar Registros:";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(29, 453);
+            this.label2.Location = new System.Drawing.Point(756, 447);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(58, 15);
             this.label2.TabIndex = 5;
@@ -193,17 +191,30 @@
             // lblCount
             // 
             this.lblCount.AutoSize = true;
-            this.lblCount.Location = new System.Drawing.Point(93, 453);
+            this.lblCount.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblCount.Location = new System.Drawing.Point(820, 447);
+            this.lblCount.MinimumSize = new System.Drawing.Size(60, 0);
             this.lblCount.Name = "lblCount";
-            this.lblCount.Size = new System.Drawing.Size(38, 15);
+            this.lblCount.Size = new System.Drawing.Size(60, 17);
             this.lblCount.TabIndex = 6;
-            this.lblCount.Text = "label3";
+            this.lblCount.Click += new System.EventHandler(this.lblCount_Click);
+            // 
+            // btnCerrar
+            // 
+            this.btnCerrar.Location = new System.Drawing.Point(805, 489);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(75, 23);
+            this.btnCerrar.TabIndex = 4;
+            this.btnCerrar.Text = "Cerrar";
+            this.btnCerrar.UseVisualStyleBackColor = true;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // CuotaMan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(918, 492);
+            this.ClientSize = new System.Drawing.Size(918, 524);
+            this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.lblCount);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -214,7 +225,7 @@
             this.MinimizeBox = false;
             this.Name = "CuotaMan";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Mantenimiento de cuotas";
+            this.Text = "Administrar Cuota";
             this.Load += new System.EventHandler(this.CuotaMan_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgCuotas)).EndInit();
             this.ResumeLayout(false);
@@ -239,5 +250,6 @@
         private Label label1;
         private Label label2;
         private Label lblCount;
+        private Button btnCerrar;
     }
 }

@@ -27,6 +27,7 @@ namespace SisMat_GUI
             dtv.RowFilter = "Nom_alum like '%"+query+"%'";
 
             dtgAlumno.DataSource = dtv;
+            lblRegistros.Text = dtgAlumno.Rows.Count.ToString();
 
         }
 

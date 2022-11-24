@@ -61,7 +61,7 @@
             this.cmbEstado.Location = new System.Drawing.Point(126, 168);
             this.cmbEstado.Name = "cmbEstado";
             this.cmbEstado.Size = new System.Drawing.Size(113, 23);
-            this.cmbEstado.TabIndex = 21;
+            this.cmbEstado.TabIndex = 3;
             this.cmbEstado.SelectedIndexChanged += new System.EventHandler(this.cmbEstado_SelectedIndexChanged);
             // 
             // label2
@@ -126,7 +126,7 @@
             this.cmbAlumnos.Location = new System.Drawing.Point(126, 117);
             this.cmbAlumnos.Name = "cmbAlumnos";
             this.cmbAlumnos.Size = new System.Drawing.Size(191, 23);
-            this.cmbAlumnos.TabIndex = 28;
+            this.cmbAlumnos.TabIndex = 2;
             // 
             // mskPrecio
             // 
@@ -134,7 +134,7 @@
             this.mskPrecio.Mask = "000.00";
             this.mskPrecio.Name = "mskPrecio";
             this.mskPrecio.Size = new System.Drawing.Size(100, 23);
-            this.mskPrecio.TabIndex = 31;
+            this.mskPrecio.TabIndex = 1;
             // 
             // btnAgregarCuota
             // 
@@ -144,7 +144,7 @@
             this.btnAgregarCuota.Location = new System.Drawing.Point(220, 375);
             this.btnAgregarCuota.Name = "btnAgregarCuota";
             this.btnAgregarCuota.Size = new System.Drawing.Size(131, 34);
-            this.btnAgregarCuota.TabIndex = 33;
+            this.btnAgregarCuota.TabIndex = 8;
             this.btnAgregarCuota.Text = "Grabar";
             this.btnAgregarCuota.UseVisualStyleBackColor = false;
             this.btnAgregarCuota.Click += new System.EventHandler(this.btnAgregarCuota_Click);
@@ -155,7 +155,7 @@
             this.button2.Location = new System.Drawing.Point(12, 375);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(131, 34);
-            this.button2.TabIndex = 34;
+            this.button2.TabIndex = 7;
             this.button2.Text = "Cancelar";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -167,7 +167,7 @@
             this.cmbTipo.Location = new System.Drawing.Point(126, 215);
             this.cmbTipo.Name = "cmbTipo";
             this.cmbTipo.Size = new System.Drawing.Size(113, 23);
-            this.cmbTipo.TabIndex = 35;
+            this.cmbTipo.TabIndex = 4;
             // 
             // label8
             // 
@@ -184,7 +184,7 @@
             this.dtpVencimiento.Location = new System.Drawing.Point(126, 261);
             this.dtpVencimiento.Name = "dtpVencimiento";
             this.dtpVencimiento.Size = new System.Drawing.Size(200, 23);
-            this.dtpVencimiento.TabIndex = 37;
+            this.dtpVencimiento.TabIndex = 5;
             this.dtpVencimiento.ValueChanged += new System.EventHandler(this.dtpVencimiento_ValueChanged);
             // 
             // dtpFechaPago
@@ -193,7 +193,7 @@
             this.dtpFechaPago.Location = new System.Drawing.Point(126, 307);
             this.dtpFechaPago.Name = "dtpFechaPago";
             this.dtpFechaPago.Size = new System.Drawing.Size(200, 23);
-            this.dtpFechaPago.TabIndex = 38;
+            this.dtpFechaPago.TabIndex = 6;
             // 
             // AgregarCuota
             // 

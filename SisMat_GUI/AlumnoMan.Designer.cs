@@ -42,6 +42,8 @@
             this.txtFiltro = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnEliminarAlumno = new System.Windows.Forms.Button();
+            this.lblRegistros = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dtgAlumno)).BeginInit();
             this.SuspendLayout();
             // 
@@ -69,8 +71,8 @@
             this.dtgAlumno.RowHeadersVisible = false;
             this.dtgAlumno.RowTemplate.Height = 25;
             this.dtgAlumno.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgAlumno.Size = new System.Drawing.Size(1143, 374);
-            this.dtgAlumno.TabIndex = 0;
+            this.dtgAlumno.Size = new System.Drawing.Size(1143, 369);
+            this.dtgAlumno.TabIndex = 1;
             // 
             // Id_alum
             // 
@@ -135,20 +137,20 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(873, 450);
+            this.button1.Location = new System.Drawing.Point(873, 494);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 1;
+            this.button1.TabIndex = 2;
             this.button1.Text = "Agregar";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(977, 450);
+            this.button2.Location = new System.Drawing.Point(977, 494);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 2;
+            this.button2.TabIndex = 3;
             this.button2.Text = "Editar";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -172,19 +174,38 @@
             // 
             // btnEliminarAlumno
             // 
-            this.btnEliminarAlumno.Location = new System.Drawing.Point(1080, 450);
+            this.btnEliminarAlumno.Location = new System.Drawing.Point(1080, 494);
             this.btnEliminarAlumno.Name = "btnEliminarAlumno";
             this.btnEliminarAlumno.Size = new System.Drawing.Size(75, 23);
-            this.btnEliminarAlumno.TabIndex = 3;
+            this.btnEliminarAlumno.TabIndex = 4;
             this.btnEliminarAlumno.Text = "Cerrar";
             this.btnEliminarAlumno.UseVisualStyleBackColor = true;
             this.btnEliminarAlumno.Click += new System.EventHandler(this.btnCerrar_Click);
+            // 
+            // lblRegistros
+            // 
+            this.lblRegistros.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblRegistros.Location = new System.Drawing.Point(1076, 449);
+            this.lblRegistros.Name = "lblRegistros";
+            this.lblRegistros.Size = new System.Drawing.Size(79, 23);
+            this.lblRegistros.TabIndex = 8;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(994, 450);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(58, 15);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Registros:";
             // 
             // AlumnoMan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1185, 498);
+            this.ClientSize = new System.Drawing.Size(1185, 543);
+            this.Controls.Add(this.lblRegistros);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.btnEliminarAlumno);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtFiltro);
@@ -218,5 +239,7 @@
         private DataGridViewTextBoxColumn Email_alum;
         private DataGridViewTextBoxColumn Estado;
         private DataGridViewTextBoxColumn Distrito;
+        private Label lblRegistros;
+        private Label label2;
     }
 }
