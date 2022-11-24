@@ -65,5 +65,10 @@ namespace SisMat_GUI
                 obtenerAlumnos("");
             }
         }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

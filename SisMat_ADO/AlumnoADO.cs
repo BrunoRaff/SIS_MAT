@@ -41,8 +41,6 @@ namespace SisMat_ADO
                 command.Parameters.AddWithValue("@Email_alum", objAlumnoBE.Email_alum);
                 command.Parameters.AddWithValue("@Usu_Registro", objAlumnoBE.Usu_Registro);
                 command.Parameters.AddWithValue("@Fec_reg", objAlumnoBE.Fec_Registro);
-                command.Parameters.AddWithValue("@Usu_Ult_Mod", objAlumnoBE.Usu_Ult_Mod);
-                command.Parameters.AddWithValue("@Fec_Ult_Mod", objAlumnoBE.Fec_Ult_Mod);
                 command.Parameters.AddWithValue("@Est_alum", objAlumnoBE.Est_alum);
                 /*MATRICULA PARAMETERS*/
                 /*

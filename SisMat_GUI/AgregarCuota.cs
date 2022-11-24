@@ -44,7 +44,7 @@ namespace SisMat_GUI
             DataRow dr = dt.NewRow();
 
             dr["Index"] = 0;
-            dr["Des_Tipo"] = "--Seleccione";
+            dr["Des_Tipo"] = "-Seleccione-";
             dt.Rows.Add(dr);
 
 
@@ -76,7 +76,7 @@ namespace SisMat_GUI
             dr = dt.NewRow();
 
             dr["Index"] = 0;
-            dr["Des_Estado"] = "--Seleccione";
+            dr["Des_Estado"] = "-Seleccione-";
             dt.Rows.Add(dr);
 
             dr = dt.NewRow();
@@ -99,7 +99,7 @@ namespace SisMat_GUI
             dr = dt.NewRow();
 
             dr["Id_alum"] = 0;
-            dr["Nom_alum"] = "--Seleccione";
+            dr["Nom_alum"] = "-Seleccione-";
             dr["Ape_alum"] = "";
             dt.Rows.InsertAt(dr, 0);
 

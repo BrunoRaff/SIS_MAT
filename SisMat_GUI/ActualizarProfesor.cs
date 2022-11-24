@@ -45,7 +45,7 @@ namespace SisMat_GUI
                 txtNombre.Text = objProfesorBE.Nom_profe;
                 txtApellido.Text = objProfesorBE.Ape_profe;
                 mskDNI.Text = objProfesorBE.Dni_profe;
-                txtTelefono.Text = objProfesorBE.Tel_profe;
+                mskTelefono.Text = objProfesorBE.Tel_profe;
                 txtEmail.Text = objProfesorBE.Email_profe;
 
                 if (objProfesorBE.Est_profe == 1)
@@ -65,7 +65,7 @@ namespace SisMat_GUI
                 }
                 else if(objProfesorBE.Sexo == "F")
                 {
-                    cmbEstado.SelectedItem = "Femenino";
+                    cmbSexo.SelectedItem = "Femenino";
                 }
 
                 //Cargar combos
@@ -193,7 +193,7 @@ namespace SisMat_GUI
                     throw new Exception("El apellido esta vacio");
                 }
 
-                if (txtTelefono.Text.Length != 9)
+                if (mskTelefono.MaskFull != true)
                 {
                     throw new Exception("Debe ingresar un numero telefónico de 9 dígitos");
                 }
@@ -214,7 +214,7 @@ namespace SisMat_GUI
                 objProfesorBE.Nom_profe = txtNombre.Text.Trim();
                 objProfesorBE.Ape_profe = txtApellido.Text.Trim();
                 objProfesorBE.Dni_profe = mskDNI.Text;
-                objProfesorBE.Tel_profe = txtTelefono.Text.Trim();
+                objProfesorBE.Tel_profe = mskTelefono.Text.Trim();
                 objProfesorBE.Email_profe = txtEmail.Text.Trim();
                 objProfesorBE.Id_esp = Convert.ToInt16(cmbEspecialidad.SelectedValue);
 
@@ -296,11 +296,6 @@ namespace SisMat_GUI
             this.Close();
         }
 
-        private void txtTelefono_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            e.Handled = !(char.IsDigit(e.KeyChar)
-                    || e.KeyChar == (char)Keys.Back);
-        }
 
     }
 }

@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using SisMat_BL;
 using SisMat_BE;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using SisMat_GUI.Properties;
 
 namespace SisMat_GUI
 {
@@ -87,7 +88,7 @@ namespace SisMat_GUI
                 String selectedSexo = cmbSexo.SelectedItem.ToString();
                 String selectedState = cmbEstado.SelectedItem.ToString();
 
-                if (selectedSexo != "Masculino" && selectedSexo != "Femenino")
+                if (selectedSexo == "-Seleccione-")
                 {
                     throw new Exception("Seleccione el sexo");
                 }
@@ -98,7 +99,7 @@ namespace SisMat_GUI
                 }
 
 
-                if (selectedState != "Activo" && selectedState != "Inactivo")
+                if (selectedState == "-Seleccione-")
                 { 
                     throw new Exception("Seleccione el estado");
                 }
@@ -123,10 +124,10 @@ namespace SisMat_GUI
                 {
                     throw new Exception("El DNI debe ser de 8 caracteres");
                 }
-                if (pctFotoProf.Image == null)
-                {
-                    throw new Exception("Debe registrar la foto.");
-                }
+                //if (pctFotoProf.Image == null)
+                //{
+                //    throw new Exception("Debe registrar la foto.");
+                //}
 
                 //Valores
 
@@ -157,12 +158,22 @@ namespace SisMat_GUI
                 }
 
                 objProfesorBE.Usu_Registro = UsuarioCredenciales.Usuario;
-     
+
 
 
                 //Foto
 
-                objProfesorBE.Foto_profe = File.ReadAllBytes(openFileDialog1.FileName);
+                
+
+                if (pctFotoProf.Image != null)
+                {
+                    objProfesorBE.Foto_profe = File.ReadAllBytes(openFileDialog1.FileName);
+                }
+                else
+                {
+                    objProfesorBE.Foto_profe = File.ReadAllBytes(@".\Img\defaultUser.jpeg");   
+                }
+
 
 
 
@@ -233,3 +244,4 @@ namespace SisMat_GUI
 
     }
 }
+

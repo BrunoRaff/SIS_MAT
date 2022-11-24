@@ -63,7 +63,7 @@
             this.txtNombre.Location = new System.Drawing.Point(107, 18);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(210, 23);
-            this.txtNombre.TabIndex = 1;
+            this.txtNombre.TabIndex = 0;
             // 
             // txtApellido
             // 
@@ -95,7 +95,7 @@
             this.cmbDepartamento.Location = new System.Drawing.Point(107, 320);
             this.cmbDepartamento.Name = "cmbDepartamento";
             this.cmbDepartamento.Size = new System.Drawing.Size(194, 23);
-            this.cmbDepartamento.TabIndex = 7;
+            this.cmbDepartamento.TabIndex = 8;
             this.cmbDepartamento.SelectionChangeCommitted += new System.EventHandler(this.cboDepartamento_SelectionChangeCommitted);
             // 
             // label2
@@ -169,7 +169,7 @@
             this.btnConfirmar.Location = new System.Drawing.Point(424, 485);
             this.btnConfirmar.Name = "btnConfirmar";
             this.btnConfirmar.Size = new System.Drawing.Size(131, 34);
-            this.btnConfirmar.TabIndex = 15;
+            this.btnConfirmar.TabIndex = 13;
             this.btnConfirmar.Text = "Grabar";
             this.btnConfirmar.UseVisualStyleBackColor = false;
             this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
@@ -180,7 +180,7 @@
             this.btnCancelar.Location = new System.Drawing.Point(19, 485);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(131, 34);
-            this.btnCancelar.TabIndex = 16;
+            this.btnCancelar.TabIndex = 12;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
@@ -200,7 +200,7 @@
             this.btnCargarFoto.Location = new System.Drawing.Point(349, 32);
             this.btnCargarFoto.Name = "btnCargarFoto";
             this.btnCargarFoto.Size = new System.Drawing.Size(122, 23);
-            this.btnCargarFoto.TabIndex = 18;
+            this.btnCargarFoto.TabIndex = 1;
             this.btnCargarFoto.Text = "Cargar Foto";
             this.btnCargarFoto.UseVisualStyleBackColor = true;
             this.btnCargarFoto.Click += new System.EventHandler(this.btnCargarFoto_Click);
@@ -221,7 +221,7 @@
             this.cmbDistrito.Location = new System.Drawing.Point(107, 413);
             this.cmbDistrito.Name = "cmbDistrito";
             this.cmbDistrito.Size = new System.Drawing.Size(196, 23);
-            this.cmbDistrito.TabIndex = 42;
+            this.cmbDistrito.TabIndex = 11;
             // 
             // label10
             // 
@@ -239,7 +239,7 @@
             this.cmbProvincia.Location = new System.Drawing.Point(107, 368);
             this.cmbProvincia.Name = "cmbProvincia";
             this.cmbProvincia.Size = new System.Drawing.Size(196, 23);
-            this.cmbProvincia.TabIndex = 40;
+            this.cmbProvincia.TabIndex = 10;
             this.cmbProvincia.SelectionChangeCommitted += new System.EventHandler(this.cboProvincia_SelectionChangeCommitted);
             // 
             // mskDNI
@@ -248,7 +248,7 @@
             this.mskDNI.Mask = "99999999";
             this.mskDNI.Name = "mskDNI";
             this.mskDNI.Size = new System.Drawing.Size(208, 23);
-            this.mskDNI.TabIndex = 44;
+            this.mskDNI.TabIndex = 3;
             // 
             // cmbEstado
             // 
@@ -258,15 +258,15 @@
             "-Seleccione-",
             "Activo",
             "Inactivo"});
-            this.cmbEstado.Location = new System.Drawing.Point(428, 299);
+            this.cmbEstado.Location = new System.Drawing.Point(428, 332);
             this.cmbEstado.Name = "cmbEstado";
             this.cmbEstado.Size = new System.Drawing.Size(127, 23);
-            this.cmbEstado.TabIndex = 42;
+            this.cmbEstado.TabIndex = 7;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(349, 302);
+            this.label9.Location = new System.Drawing.Point(349, 335);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(45, 15);
             this.label9.TabIndex = 43;
@@ -284,15 +284,15 @@
             "-Seleccione-",
             "Masculino",
             "Femenino"});
-            this.cmbSexo.Location = new System.Drawing.Point(428, 354);
+            this.cmbSexo.Location = new System.Drawing.Point(428, 290);
             this.cmbSexo.Name = "cmbSexo";
             this.cmbSexo.Size = new System.Drawing.Size(127, 23);
-            this.cmbSexo.TabIndex = 42;
+            this.cmbSexo.TabIndex = 9;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(349, 357);
+            this.label12.Location = new System.Drawing.Point(349, 293);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(35, 15);
             this.label12.TabIndex = 43;
@@ -304,7 +304,7 @@
             this.mskTelefono.Mask = "999999999";
             this.mskTelefono.Name = "mskTelefono";
             this.mskTelefono.Size = new System.Drawing.Size(210, 23);
-            this.mskTelefono.TabIndex = 75;
+            this.mskTelefono.TabIndex = 4;
             this.mskTelefono.ValidatingType = typeof(int);
             // 
             // AgregarProfesor

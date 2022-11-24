@@ -57,6 +57,7 @@
             // 
             // cmbTipo
             // 
+            this.cmbTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTipo.FormattingEnabled = true;
             this.cmbTipo.Location = new System.Drawing.Point(122, 225);
             this.cmbTipo.Name = "cmbTipo";
@@ -83,7 +84,7 @@
             this.btnActualizarCuota.Name = "btnActualizarCuota";
             this.btnActualizarCuota.Size = new System.Drawing.Size(131, 34);
             this.btnActualizarCuota.TabIndex = 50;
-            this.btnActualizarCuota.Text = "Confirmar";
+            this.btnActualizarCuota.Text = "Grabar";
             this.btnActualizarCuota.UseVisualStyleBackColor = false;
             this.btnActualizarCuota.Click += new System.EventHandler(this.btnActualizarCuota_Click);
             // 
@@ -97,6 +98,7 @@
             // 
             // cmbAlumno
             // 
+            this.cmbAlumno.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbAlumno.FormattingEnabled = true;
             this.cmbAlumno.Location = new System.Drawing.Point(122, 127);
             this.cmbAlumno.Name = "cmbAlumno";
@@ -159,6 +161,7 @@
             // 
             // cmbEstado
             // 
+            this.cmbEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbEstado.FormattingEnabled = true;
             this.cmbEstado.Location = new System.Drawing.Point(122, 178);
             this.cmbEstado.Name = "cmbEstado";

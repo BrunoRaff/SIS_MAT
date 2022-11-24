@@ -51,18 +51,8 @@ namespace SisMat_GUI
 
         private void ActualizarAlumno_Load(object sender, EventArgs e)
         {
-            DataTable dt = ubigeoBL.Ubigeo_Departamentos();
-            DataRow dr;
- 
+            
 
-
-            dr = dt.NewRow();
-            dr["IDDEPA"] = 0;
-            dr["DEPARTAMENTO"] = "Seleccione un Departamento";
-            dt.Rows.InsertAt(dr, 0);
-            cmbDepartamento.DataSource = dt;
-            cmbDepartamento.DisplayMember = "DEPARTAMENTO";
-            cmbDepartamento.ValueMember = "IDDEPA";
 
             DataTable dtCarreras = carreraBL.ListarCarrera();
             DataRow drCarrera;
@@ -92,15 +82,12 @@ namespace SisMat_GUI
             txtNombre.Text = objAlumno.Nom_alum;
             if (objAlumno.Sexo == "F")
             {
-                cmbSexo.Text = "Femenino";
-                cmbSexo.Items.Add("Masculino");
-                cmbSexo.Items.Add("Femenino");
+                cmbSexo.SelectedItem = "Femenino";
             } else
             {
-                cmbSexo.Text = "Masculino";
-                cmbSexo.Items.Add("Femenino");
-                cmbSexo.Items.Add("Masculino");
+                cmbSexo.SelectedItem = "Masculino";
             }
+            lblID.Text = objAlumno.Id_alum.ToString();
             txtApellido.Text = objAlumno.Ape_alum;
             txtDireccion.Text = objAlumno.Dir_alum;
             mskDNI.Text = objAlumno.Dni_alum;
@@ -109,9 +96,7 @@ namespace SisMat_GUI
             dtpNacimiento.Text = Convert.ToDateTime(objAlumno.Fec_nac).ToString();
 
             String Id_Ubigeo = objAlumno.Id_Ubigeo;
-            cmbDepartamento.SelectedValue = Id_Ubigeo.Substring(0, 2);
-            cmbProvincia.SelectedValue = Id_Ubigeo.Substring(2, 2);
-            cmbDist.SelectedValue = Id_Ubigeo.Substring(4, 2);
+            CargarUbigeo(Id_Ubigeo.Substring(0, 2), Id_Ubigeo.Substring(2, 2), Id_Ubigeo.Substring(4, 2));
 
             /*
             Int16 idCarrera = alumnoBL.ConsultarAlumnoCarrera(this.IdAlumno);
@@ -123,14 +108,10 @@ namespace SisMat_GUI
 
             if (objAlumno.Est_alum == 1)
             {
-                cmbEstado.Text = "Activo";
-                cmbEstado.Items.Add("Inactivo");
-                cmbEstado.Items.Add("Activo");
+                cmbEstado.SelectedItem = "Activo";
             } else
             {
-                cmbEstado.Text = "Inactivo";
-                cmbEstado.Items.Add("Inactivo");
-                cmbEstado.Items.Add("Activo");
+                cmbEstado.SelectedItem = "Inactivo";
             }
 
             if (objAlumno.Foto_alum != null)
@@ -142,81 +123,47 @@ namespace SisMat_GUI
             }
         }
 
-        private void cmbDepartamento_SelectedValueChanged(object sender, EventArgs e)
+        private void CargarUbigeo(String IdDepa, String IdProv, String IdDist)
         {
-            String selectedDepartamentoId = cmbDepartamento.SelectedValue.ToString();
 
-            if (selectedDepartamentoId != "0")
-            {
-                actualIdUbigeo = selectedDepartamentoId;
-                DataTable dt = ubigeoBL.Ubigeo_ProvinciasDepartamento(selectedDepartamentoId);
-                DataRow dr;
-                dr = dt.NewRow();
-                dr["IDPROV"] = 0;
-                dr["PROVINCIA"] = "Seleccione una Provincia";
-                dt.Rows.InsertAt(dr, 0);
-                cmbProvincia.DataSource = dt;
-                cmbProvincia.DisplayMember = "PROVINCIA";
-                cmbProvincia.ValueMember = "IDPROV";
-            }
+            cmbDepartamento.DataSource = ubigeoBL.Ubigeo_Departamentos();
+            cmbDepartamento.DisplayMember = "Departamento";
+            cmbDepartamento.ValueMember = "IdDepa";
+            cmbDepartamento.SelectedValue = IdDepa;
+
+            cmbProvincia.DataSource = ubigeoBL.Ubigeo_ProvinciasDepartamento(IdDepa);
+            cmbProvincia.DisplayMember = "Provincia";
+            cmbProvincia.ValueMember = "IdProv";
+            cmbProvincia.SelectedValue = IdProv;
+
+            cmbDist.DataSource = ubigeoBL.Ubigeo_DistritosProvinciaDepartamento(IdDepa, IdProv);
+            cmbDist.DisplayMember = "Distrito";
+            cmbDist.ValueMember = "IdDist";
+            cmbDist.SelectedValue = IdDist;
+
+
         }
 
-        private void cmbProvincia_SelectedValueChanged(object sender, EventArgs e)
-        {
-            String selectedIdProvincia = cmbProvincia.SelectedValue.ToString();
-            if (selectedIdProvincia != "0")
-            {
-                DataTable dt = ubigeoBL.Ubigeo_DistritosProvinciaDepartamento(cmbDepartamento.SelectedValue.ToString(), selectedIdProvincia);
-                DataRow dr;
-                dr = dt.NewRow();
-                dr["IDDIST"] = 0;
-                dr["DISTRITO"] = "Seleccione un Distrito";
-                dt.Rows.InsertAt(dr, 0);
-                cmbDist.DataSource = dt;
-                cmbDist.DisplayMember = "DISTRITO";
-                cmbDist.ValueMember = "IDDIST";
-                actualIdUbigeo = actualIdUbigeo + selectedIdProvincia;
-            }
-        }
-
-        private void comboBox2_SelectedValueChanged(object sender, EventArgs e)
-        {
-            String selectedIdDistrito = cmbDist.SelectedValue.ToString();
-            if (selectedIdDistrito != "0" & cmbDist.SelectedIndex != 0)
-            {
-                actualIdUbigeo = actualIdUbigeo + selectedIdDistrito;
-            }
-        }
 
         private void btnActualizarAlumno_Click(object sender, EventArgs e)
         {
             try
             {
-                String selectedState;
-                String selectedSexo;
+                String selectedState = cmbEstado.SelectedItem.ToString();
+                String selectedSexo = cmbSexo.SelectedItem.ToString();
 
 
-                if (cmbEstado.SelectedItem == null)
+                if (selectedState == "-Seleccione-")
                 {
-                    selectedState = cmbEstado.Text;
-                } else
-                {
-                    selectedState = cmbEstado.SelectedItem.ToString();
+                    throw new Exception("Seleccione el estado");
                 }
-                if (cmbSexo.SelectedItem == null)
+                if (selectedSexo == "-Seleccione-")
                 {
-                    selectedSexo = cmbSexo.Text;
-                } else
-                {
-                    selectedSexo = cmbSexo.SelectedItem.ToString();
+                    throw new Exception("Seleccione el sexo");
                 }
-                if (txtNombre.Text.Trim() == "" | txtApellido.Text.Trim() == "" | mskDNI.Text.Trim() == "" | mskTelefono.Text.Trim() == "" | txtEmail.Text.Trim() == "" | dtpNacimiento.Text.Trim() == "" | txtDireccion.Text.Trim() == "")
+                if (txtNombre.Text.Trim() == "" | txtApellido.Text.Trim() == "" | mskDNI.MaskFull != true | mskTelefono.MaskFull != true | txtEmail.Text.Trim() == "" | dtpNacimiento.Text.Trim() == "" | txtDireccion.Text.Trim() == "")
                 {
                     throw new Exception("Todos los campos son obligatorios");
-                }
-                if (cmbDist.SelectedIndex == 0 | cmbProvincia.SelectedIndex == 0 | cmbDepartamento.SelectedIndex == 0)
-                {
-                    throw new Exception("Debe seleccionar el ubigeo");
                 }
                 /*
                 if (cmbCarrera.SelectedIndex == 0 | cmbSemestre.SelectedIndex == 0)
@@ -253,7 +200,8 @@ namespace SisMat_GUI
                     objAlumnoBE.Sexo = "F";
                 }
 
-                objAlumnoBE.Id_Ubigeo = cmbDepartamento.SelectedValue.ToString() + cmbProvincia.SelectedValue.ToString() + cmbDist.SelectedValue.ToString();
+                objAlumnoBE.Id_Ubigeo = cmbDepartamento.SelectedValue.ToString() +
+                                    cmbProvincia.SelectedValue.ToString() + cmbDist.SelectedValue.ToString();
 
                 if (openFileDialog.FileName.Length > 0)
                 {
@@ -262,7 +210,6 @@ namespace SisMat_GUI
                 {
                     objAlumnoBE.Foto_alum = FotoOriginal;
                 }
-                objAlumnoBE.Usu_Registro = UsuarioCredenciales.Usuario;
                 objAlumnoBE.Usu_Ult_Mod = UsuarioCredenciales.Usuario;
                 objAlumnoBE.Fec_Ult_Mod = DateTime.Today;
                 objAlumnoBE.Fec_nac = Convert.ToDateTime(dtpNacimiento.Text);
@@ -283,6 +230,23 @@ namespace SisMat_GUI
             }
         }
 
+        private void cboDepartamento_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            // Refrescamos 
+            CargarUbigeo(cmbDepartamento.SelectedValue.ToString(), "01", "01");
+
+        }
+
+        private void cboProvincia_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            // Refrescamos 
+            CargarUbigeo(cmbDepartamento.SelectedValue.ToString(), cmbProvincia.SelectedValue.ToString(), "01");
+
+
+        }
+
+
+
         private void btnCargarFoto_Click(object sender, EventArgs e)
         {
             try
@@ -302,5 +266,6 @@ namespace SisMat_GUI
                 MessageBox.Show(ex.Message);
             }
         }
+
     }
 }

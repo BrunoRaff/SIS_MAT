@@ -56,6 +56,7 @@
             // 
             // cmbEstado
             // 
+            this.cmbEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbEstado.FormattingEnabled = true;
             this.cmbEstado.Location = new System.Drawing.Point(126, 168);
             this.cmbEstado.Name = "cmbEstado";
@@ -120,6 +121,7 @@
             // 
             // cmbAlumnos
             // 
+            this.cmbAlumnos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbAlumnos.FormattingEnabled = true;
             this.cmbAlumnos.Location = new System.Drawing.Point(126, 117);
             this.cmbAlumnos.Name = "cmbAlumnos";
@@ -143,7 +145,7 @@
             this.btnAgregarCuota.Name = "btnAgregarCuota";
             this.btnAgregarCuota.Size = new System.Drawing.Size(131, 34);
             this.btnAgregarCuota.TabIndex = 33;
-            this.btnAgregarCuota.Text = "Confirmar";
+            this.btnAgregarCuota.Text = "Grabar";
             this.btnAgregarCuota.UseVisualStyleBackColor = false;
             this.btnAgregarCuota.Click += new System.EventHandler(this.btnAgregarCuota_Click);
             // 
@@ -160,6 +162,7 @@
             // 
             // cmbTipo
             // 
+            this.cmbTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTipo.FormattingEnabled = true;
             this.cmbTipo.Location = new System.Drawing.Point(126, 215);
             this.cmbTipo.Name = "cmbTipo";

@@ -33,13 +33,13 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dtgProfe = new System.Windows.Forms.DataGridView();
             this.Id_profe = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Foto_profe = new System.Windows.Forms.DataGridViewImageColumn();
             this.Nom_profe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Ape_profe = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Sexo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Des_esp = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Dni_profe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Tel_profe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Email_profe = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Distrito = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnCerrar = new System.Windows.Forms.Button();
@@ -61,13 +61,13 @@
             this.dtgProfe.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgProfe.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id_profe,
+            this.Foto_profe,
             this.Nom_profe,
             this.Ape_profe,
-            this.Sexo,
-            this.Des_esp,
-            this.Dni_profe,
             this.Tel_profe,
-            this.Email_profe});
+            this.Email_profe,
+            this.Estado,
+            this.Distrito});
             this.dtgProfe.Location = new System.Drawing.Point(21, 61);
             this.dtgProfe.Name = "dtgProfe";
             this.dtgProfe.ReadOnly = true;
@@ -80,12 +80,20 @@
             // Id_profe
             // 
             this.Id_profe.DataPropertyName = "Id_profe";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             this.Id_profe.DefaultCellStyle = dataGridViewCellStyle1;
             this.Id_profe.FillWeight = 100.0962F;
             this.Id_profe.HeaderText = "ID";
             this.Id_profe.Name = "Id_profe";
             this.Id_profe.ReadOnly = true;
+            // 
+            // Foto_profe
+            // 
+            this.Foto_profe.DataPropertyName = "Foto_profe";
+            this.Foto_profe.HeaderText = "Foto";
+            this.Foto_profe.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.Foto_profe.Name = "Foto_profe";
+            this.Foto_profe.ReadOnly = true;
             // 
             // Nom_profe
             // 
@@ -105,41 +113,12 @@
             this.Ape_profe.Name = "Ape_profe";
             this.Ape_profe.ReadOnly = true;
             // 
-            // Sexo
-            // 
-            this.Sexo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Sexo.DataPropertyName = "Sexo";
-            this.Sexo.FillWeight = 100.0657F;
-            this.Sexo.HeaderText = "Sexo";
-            this.Sexo.Name = "Sexo";
-            this.Sexo.ReadOnly = true;
-            // 
-            // Des_esp
-            // 
-            this.Des_esp.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Des_esp.DataPropertyName = "Des_esp";
-            this.Des_esp.FillWeight = 99.28825F;
-            this.Des_esp.HeaderText = "Especialidad";
-            this.Des_esp.Name = "Des_esp";
-            this.Des_esp.ReadOnly = true;
-            // 
-            // Dni_profe
-            // 
-            this.Dni_profe.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Dni_profe.DataPropertyName = "Dni_profe";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.Dni_profe.DefaultCellStyle = dataGridViewCellStyle2;
-            this.Dni_profe.FillWeight = 100.1474F;
-            this.Dni_profe.HeaderText = "DNI";
-            this.Dni_profe.Name = "Dni_profe";
-            this.Dni_profe.ReadOnly = true;
-            // 
             // Tel_profe
             // 
             this.Tel_profe.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Tel_profe.DataPropertyName = "Tel_profe";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.Tel_profe.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.Tel_profe.DefaultCellStyle = dataGridViewCellStyle2;
             this.Tel_profe.FillWeight = 100.1294F;
             this.Tel_profe.HeaderText = "Teléfono";
             this.Tel_profe.Name = "Tel_profe";
@@ -153,6 +132,24 @@
             this.Email_profe.HeaderText = "Email";
             this.Email_profe.Name = "Email_profe";
             this.Email_profe.ReadOnly = true;
+            // 
+            // Estado
+            // 
+            this.Estado.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Estado.DataPropertyName = "Estado";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.Estado.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Estado.FillWeight = 100.1474F;
+            this.Estado.HeaderText = "Estado";
+            this.Estado.Name = "Estado";
+            this.Estado.ReadOnly = true;
+            // 
+            // Distrito
+            // 
+            this.Distrito.DataPropertyName = "Distrito";
+            this.Distrito.HeaderText = "Distrito";
+            this.Distrito.Name = "Distrito";
+            this.Distrito.ReadOnly = true;
             // 
             // btnAgregar
             // 
@@ -215,7 +212,7 @@
             this.txtFiltro.Location = new System.Drawing.Point(205, 17);
             this.txtFiltro.Name = "txtFiltro";
             this.txtFiltro.Size = new System.Drawing.Size(221, 23);
-            this.txtFiltro.TabIndex = 8;
+            this.txtFiltro.TabIndex = 0;
             this.txtFiltro.TextChanged += new System.EventHandler(this.txtFiltro_TextChanged);
             // 
             // ProfesorMan
@@ -252,12 +249,12 @@
         private Label label2;
         private TextBox txtFiltro;
         private DataGridViewTextBoxColumn Id_profe;
+        private DataGridViewImageColumn Foto_profe;
         private DataGridViewTextBoxColumn Nom_profe;
         private DataGridViewTextBoxColumn Ape_profe;
-        private DataGridViewTextBoxColumn Sexo;
-        private DataGridViewTextBoxColumn Des_esp;
-        private DataGridViewTextBoxColumn Dni_profe;
         private DataGridViewTextBoxColumn Tel_profe;
         private DataGridViewTextBoxColumn Email_profe;
+        private DataGridViewTextBoxColumn Estado;
+        private DataGridViewTextBoxColumn Distrito;
     }
 }
