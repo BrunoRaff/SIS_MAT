@@ -13,7 +13,7 @@ namespace SisMat_GUI
 {
     public partial class CuotaMan : Form
 
-        
+
 
     {
         CuotaBL objCuotaBL = new CuotaBL();
@@ -45,7 +45,7 @@ namespace SisMat_GUI
             agregarCuotaModal.ShowDialog();
 
             dtgCuotas.DataSource = objCuotaBL.ListarCuota();
-           
+
 
             txtFiltro.Text = "";
             lblCount.Text = dtgCuotas.Rows.Count.ToString();
@@ -90,6 +90,17 @@ namespace SisMat_GUI
         private void label2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void lblCount_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+
+            this.Close();
         }
     }
 }
