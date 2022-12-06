@@ -226,7 +226,7 @@ namespace SisMat_GUI
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Espera un momento!");
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK);
             }
         }
 

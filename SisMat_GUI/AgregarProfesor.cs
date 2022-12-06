@@ -186,6 +186,7 @@ namespace SisMat_GUI
                 //Insert
                 if (objProfesorBL.InsertarProfesor(objProfesorBE) == true)
                 {
+                    MessageBox.Show("Profesor " + objProfesorBE.Nom_profe + " " + objProfesorBE.Ape_profe + " agregado correctamente", "Success", MessageBoxButtons.OK);
                     this.Close();
                 }
                 else
@@ -195,7 +196,7 @@ namespace SisMat_GUI
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Se ha producido el error: " + ex.Message);
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK);
             }
         }
 
