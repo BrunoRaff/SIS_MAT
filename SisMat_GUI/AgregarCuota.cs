@@ -151,7 +151,8 @@ namespace SisMat_GUI
 
                 objCuotaBE.Vencimiento = dtpVencimiento.Value.Date;
 
-                if (dtpFechaPago.Enabled) { objCuotaBE.Fec_pago = dtpFechaPago.Value.Date; } 
+                if (dtpFechaPago.Enabled) { objCuotaBE.Fec_pago = dtpFechaPago.Value.Date; }
+                else
                 {
                     objCuotaBE.Fec_pago = DateTime.MaxValue;
                 }
