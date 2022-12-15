@@ -30,7 +30,15 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dtgCuotas = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.txtFiltro = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lblCount = new System.Windows.Forms.Label();
+            this.btnCerrar = new System.Windows.Forms.Button();
             this.Id_cuota = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreCompleto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Ndoc_cuota = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -39,13 +47,6 @@
             this.TipoCuota = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Vencimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.txtFiltro = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.lblCount = new System.Windows.Forms.Label();
-            this.btnCerrar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgCuotas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -77,68 +78,6 @@
             this.dtgCuotas.Size = new System.Drawing.Size(851, 366);
             this.dtgCuotas.TabIndex = 1;
             this.dtgCuotas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // Id_cuota
-            // 
-            this.Id_cuota.DataPropertyName = "Id_cuota";
-            this.Id_cuota.HeaderText = "ID";
-            this.Id_cuota.Name = "Id_cuota";
-            this.Id_cuota.ReadOnly = true;
-            // 
-            // NombreCompleto
-            // 
-            this.NombreCompleto.DataPropertyName = "NombreCompleto";
-            this.NombreCompleto.HeaderText = "Alumno";
-            this.NombreCompleto.Name = "NombreCompleto";
-            this.NombreCompleto.ReadOnly = true;
-            // 
-            // Ndoc_cuota
-            // 
-            this.Ndoc_cuota.DataPropertyName = "Ndoc_cuota";
-            this.Ndoc_cuota.HeaderText = "N. Cuota";
-            this.Ndoc_cuota.Name = "Ndoc_cuota";
-            this.Ndoc_cuota.ReadOnly = true;
-            // 
-            // Fecha_pago
-            // 
-            this.Fecha_pago.DataPropertyName = "Fecha Pago";
-            dataGridViewCellStyle1.NullValue = "PENDIENTE";
-            this.Fecha_pago.DefaultCellStyle = dataGridViewCellStyle1;
-            this.Fecha_pago.HeaderText = "Fecha Pago";
-            this.Fecha_pago.Name = "Fecha_pago";
-            this.Fecha_pago.ReadOnly = true;
-            // 
-            // EstadoCuota
-            // 
-            this.EstadoCuota.DataPropertyName = "EstadoCuota";
-            this.EstadoCuota.HeaderText = "Estado";
-            this.EstadoCuota.Name = "EstadoCuota";
-            this.EstadoCuota.ReadOnly = true;
-            // 
-            // TipoCuota
-            // 
-            this.TipoCuota.DataPropertyName = "TipoCuota";
-            this.TipoCuota.HeaderText = "Tipo";
-            this.TipoCuota.Name = "TipoCuota";
-            this.TipoCuota.ReadOnly = true;
-            // 
-            // Vencimiento
-            // 
-            this.Vencimiento.DataPropertyName = "Vencimiento";
-            this.Vencimiento.HeaderText = "Vencimiento";
-            this.Vencimiento.Name = "Vencimiento";
-            this.Vencimiento.ReadOnly = true;
-            // 
-            // Precio
-            // 
-            this.Precio.DataPropertyName = "Precio";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle2.Format = "N2";
-            dataGridViewCellStyle2.NullValue = null;
-            this.Precio.DefaultCellStyle = dataGridViewCellStyle2;
-            this.Precio.HeaderText = "Precio";
-            this.Precio.Name = "Precio";
-            this.Precio.ReadOnly = true;
             // 
             // button1
             // 
@@ -209,6 +148,70 @@
             this.btnCerrar.UseVisualStyleBackColor = true;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
+            // Id_cuota
+            // 
+            this.Id_cuota.DataPropertyName = "Id_cuota";
+            this.Id_cuota.HeaderText = "ID";
+            this.Id_cuota.Name = "Id_cuota";
+            this.Id_cuota.ReadOnly = true;
+            // 
+            // NombreCompleto
+            // 
+            this.NombreCompleto.DataPropertyName = "NombreCompleto";
+            this.NombreCompleto.HeaderText = "Alumno";
+            this.NombreCompleto.Name = "NombreCompleto";
+            this.NombreCompleto.ReadOnly = true;
+            // 
+            // Ndoc_cuota
+            // 
+            this.Ndoc_cuota.DataPropertyName = "Ndoc_cuota";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.Ndoc_cuota.DefaultCellStyle = dataGridViewCellStyle1;
+            this.Ndoc_cuota.HeaderText = "N. Cuota";
+            this.Ndoc_cuota.Name = "Ndoc_cuota";
+            this.Ndoc_cuota.ReadOnly = true;
+            // 
+            // Fecha_pago
+            // 
+            this.Fecha_pago.DataPropertyName = "Fecha Pago";
+            dataGridViewCellStyle2.NullValue = "PENDIENTE";
+            this.Fecha_pago.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Fecha_pago.HeaderText = "Fecha Pago";
+            this.Fecha_pago.Name = "Fecha_pago";
+            this.Fecha_pago.ReadOnly = true;
+            // 
+            // EstadoCuota
+            // 
+            this.EstadoCuota.DataPropertyName = "EstadoCuota";
+            this.EstadoCuota.HeaderText = "Estado";
+            this.EstadoCuota.Name = "EstadoCuota";
+            this.EstadoCuota.ReadOnly = true;
+            // 
+            // TipoCuota
+            // 
+            this.TipoCuota.DataPropertyName = "TipoCuota";
+            this.TipoCuota.HeaderText = "Tipo";
+            this.TipoCuota.Name = "TipoCuota";
+            this.TipoCuota.ReadOnly = true;
+            // 
+            // Vencimiento
+            // 
+            this.Vencimiento.DataPropertyName = "Vencimiento";
+            this.Vencimiento.HeaderText = "Vencimiento";
+            this.Vencimiento.Name = "Vencimiento";
+            this.Vencimiento.ReadOnly = true;
+            // 
+            // Precio
+            // 
+            this.Precio.DataPropertyName = "Precio";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle3.Format = "N2";
+            dataGridViewCellStyle3.NullValue = null;
+            this.Precio.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Precio.HeaderText = "Precio";
+            this.Precio.Name = "Precio";
+            this.Precio.ReadOnly = true;
+            // 
             // CuotaMan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -238,6 +241,11 @@
         private DataGridView dtgCuotas;
         private Button button1;
         private Button button2;
+        private TextBox txtFiltro;
+        private Label label1;
+        private Label label2;
+        private Label lblCount;
+        private Button btnCerrar;
         private DataGridViewTextBoxColumn Id_cuota;
         private DataGridViewTextBoxColumn NombreCompleto;
         private DataGridViewTextBoxColumn Ndoc_cuota;
@@ -246,10 +254,5 @@
         private DataGridViewTextBoxColumn TipoCuota;
         private DataGridViewTextBoxColumn Vencimiento;
         private DataGridViewTextBoxColumn Precio;
-        private TextBox txtFiltro;
-        private Label label1;
-        private Label label2;
-        private Label lblCount;
-        private Button btnCerrar;
     }
 }
